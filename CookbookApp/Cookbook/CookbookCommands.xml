@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="de-de" Name="commandSet_de-de">
+    <CommandPrefix>Basta, </CommandPrefix>
+    <Example>Kennst du ein Rezept mit Spargel?</Example>
+
+    <Command Name="findRecipe">
+      <Example>Kennst du ein Rezept mit Spargel?</Example>
+      <ListenFor>Kennst du ein Rezept mit {ingredient}?</ListenFor>
+      <Feedback>Suche ein Rezept mit {ingredient}...</Feedback>
+      <VoiceCommandService Target="RecipeVoiceCommandService"/>
+    </Command>
+
+    <PhraseList Label="ingredient">
+      <Item>Spargel</Item>
+      <Item>Tomaten</Item>
+      <Item>Nudeln</Item>
+      <Item>Spinat</Item>
+    </PhraseList>      
+
+  </CommandSet>
+</VoiceCommands>
