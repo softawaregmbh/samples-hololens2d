@@ -78,5 +78,23 @@ namespace Cookbook.ViewModels
         {
             this.SelectedRecipeDetail = await RecipeService.GetRecipeDetail(id);
         }
+
+        public void NavigateRecipe(int offset)
+        {
+            int newIndex = 0;
+
+            if (this.SelectedRecipe != null)
+            {
+                var currentIndex = this.Recipes.IndexOf(this.SelectedRecipe);
+                newIndex = (currentIndex + offset) % this.Recipes.Count;
+
+                if (newIndex < 0)
+                {
+                    newIndex += this.Recipes.Count;
+                }
+            }
+
+            this.SelectedRecipe = this.Recipes[newIndex];
+        }
     }
 }
