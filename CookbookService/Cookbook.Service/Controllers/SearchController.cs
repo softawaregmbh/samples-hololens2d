@@ -10,7 +10,7 @@ using Cookbook.Service.Data.Repository;
 
 namespace Cookbook.Service.Controllers
 {
-    public class SearchController : Controller
+    public class SearchController : ApiController
     {
         public IEnumerable<Recipe> Get(string query)
         {
